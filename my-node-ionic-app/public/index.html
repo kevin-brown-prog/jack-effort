@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ionic App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionic@5.6.0/dist/css/ionic.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css">
 </head>
 <body>
     <ion-app>
@@ -17,9 +17,18 @@
         <ion-content>
             <h1>Welcome to Your Ionic App</h1>
             <p>This is a mobile-friendly static page served by a Node.js server.</p>
+            <ion-item>
+                <ion-label position="floating">Enter Perceived Effort</ion-label>
+                <ion-input id="effortInput" type="number"></ion-input>
+            </ion-item>
+            <ion-button expand="full" onclick="calculateVelocity()">Calculate Velocity</ion-button>
+            <ion-item>
+                <ion-label>Calculated Velocity:</ion-label>
+                <ion-text id="velocityOutput"></ion-text>
+            </ion-item>
         </ion-content>
     </ion-app>
-    <script src="https://cdn.jsdelivr.net/npm/ionic@5.6.0/dist/ionic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
