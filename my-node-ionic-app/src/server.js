@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-
+//const serverless = require('serverless-http');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -23,7 +23,8 @@ app.post('/config', (req, res) => {
         }
     });
 });
-
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+//module.exports.handler = serverless(app);

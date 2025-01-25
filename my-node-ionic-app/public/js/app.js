@@ -1,6 +1,6 @@
 // This file contains the JavaScript code for the static page.
 // It includes initialization code for the Ionic framework and any custom functionality required for the mobile-friendly website.
-let config = {};
+let config = {linerization: 2.5, max_velo: 85};
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the Ionic framework
     const app = document.querySelector('#app');
@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Custom initialization code can go here
         console.log('Ionic app initialized');
     }
+});
 
    
-
+/*
     fetch('/config')
         .then(response => response.json())
         .then(data => {
             config = data;
         })
         .catch(error => console.error('Error fetching config:', error));
-});
+
+
+        });*/
 
 function calculateVelocity() {
     let effortInput = document.getElementById('effortInput').value;
