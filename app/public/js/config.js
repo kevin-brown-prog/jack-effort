@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('maxVeloInput').value = data.max_velo;
         })
         .catch(error => console.error('Error fetching config:', error));
+
+    // Get config from local storage
+    const storedConfig = localStorage.getItem('config');
+    if (storedConfig) {
+        const config = JSON.parse(storedConfig);
+        document.getElementById('linerizationInput').value = config.linerization;
+        document.getElementById('maxVeloInput').value = config.max_velo;
+    }
 });
 
 function updateConfig() {
@@ -19,16 +27,8 @@ function updateConfig() {
         max_velo: parseFloat(maxVeloInput)
     };
 
-    fetch('/config', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newConfig)
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data);
-    })
-    .catch(error => console.error('Error updating config:', error));
+    // Save config to local storage
+    localStorage.setItem('config', JSON.stringify(newConfig));
+
+
 }
