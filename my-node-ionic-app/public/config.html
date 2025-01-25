@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Config</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css">
+    <style>
+        ion-content {
+            padding: 16px;
+        }
+    </style>
 </head>
 <body>
     <ion-app>
@@ -15,14 +20,15 @@
         </ion-header>
         <ion-content>
             <ion-item>
-                <ion-label position="floating">Linerization</ion-label>
+                <ion-label position="stacked">Linerization</ion-label>
                 <ion-input id="linerizationInput" type="number"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">Max Velocity</ion-label>
+                <ion-label position="stacked">Max Velocity</ion-label>
                 <ion-input id="maxVeloInput" type="number"></ion-input>
-            </ion-button>
+            </ion-item>
             <ion-button expand="full" onclick="updateConfig()">Update Config</ion-button>
+            <ion-button expand="full" href="index.html">Back to Calculate</ion-button>
         </ion-content>
     </ion-app>
     <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>

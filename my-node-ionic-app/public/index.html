@@ -11,20 +11,23 @@
     <ion-app>
         <ion-header>
             <ion-toolbar>
-                <ion-title>Ionic Node App</ion-title>
+                <ion-title>Jack Velo App</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content>
-            <h1>Welcome to Your Ionic App</h1>
-            <p>This is a mobile-friendly static page served by a Node.js server.</p>
+            <h1>Welcome Jack</h1>
+            <p>Calculate your Effort versus Velocity</p>
             <ion-item>
-                <ion-label position="floating">Enter Perceived Effort</ion-label>
-                <ion-input id="effortInput" type="number"></ion-input>
+                <ion-label >Enter Perceived Effort:</ion-label>
+                <ion-input id="effortInput" type="number" value="80"></ion-input>
             </ion-item>
             <ion-button expand="full" onclick="calculateVelocity()">Calculate Velocity</ion-button>
             <ion-item>
                 <ion-label>Calculated Velocity:</ion-label>
                 <ion-text id="velocityOutput"></ion-text>
+            </ion-item>
+            <ion-item>
+                <ion-button expand="full" href="config.html">Update Config</ion-button>
             </ion-item>
         </ion-content>
     </ion-app>
