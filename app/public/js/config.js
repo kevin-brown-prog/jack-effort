@@ -1,14 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch the current configuration from the server
-    fetch('/config')
-        .then(response => response.json())
-        .then(data => {
-            // Populate the input fields with the current configuration
-            document.getElementById('linerizationInput').value = data.linerization;
-            document.getElementById('maxVeloInput').value = data.max_velo;
-        })
-        .catch(error => console.error('Error fetching config:', error));
-
+   
     // Get config from local storage
     const storedConfig = localStorage.getItem('config');
     if (storedConfig) {
