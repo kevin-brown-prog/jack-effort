@@ -1,0 +1,15 @@
+{
+  "name": "my-node-ionic-app",
+  "version": "1.0.0",
+  "description": "A Node.js server serving a static Ionic framework page.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ionic": "^6.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
