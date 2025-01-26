@@ -8,7 +8,60 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('linerizationInput').value = config.linerization;
         document.getElementById('maxVeloInput').value = config.max_velo;
     }
+
+     // Initialize the chart
+     const ctx = document.getElementById('effortVelocityChart').getContext('2d');
+     window.effortVelocityChart = new Chart(ctx, {
+         type: 'line',
+         data: {
+             labels: [],
+             datasets: [{
+                 label: 'Effort vs Velocity',
+                 data: [],
+                 borderColor: 'rgba(75, 192, 192, 1)',
+                 borderWidth: 1,
+                 fill: false
+             }]
+         },
+         options: {
+             scales: {
+                 x: {
+                     title: {
+                         display: true,
+                         text: 'Perceived Effort'
+                     }
+                 },
+                 y: {
+                     title: {
+                         display: true,
+                         text: 'Velocity'
+                     }
+                 }
+             }
+         }
+     });
+     createChart();
+
 });
+
+function createChart()
+{
+    window.effortVelocityChart.data.labels = [];
+    window.effortVelocityChart.data.datasets[0].data = [];
+    const linerization = config.linerization || 2.5;
+    const max_velo = config.max_velo || 85;
+    
+    const max_sigmoid_output = 1 / (1 + Math.exp(-linerization)) - 0.5;
+    for(let i = 0; i <= 100; i+=5){
+        let effort = i;
+        const effortNormalized = effort / 100 * linerization;
+        const velocity = (1 / (1 + Math.exp(-effortNormalized)) - 0.5) / max_sigmoid_output * max_velo;
+    
+        window.effortVelocityChart.data.labels.push(effort);
+        window.effortVelocityChart.data.datasets[0].data.push(velocity);
+        window.effortVelocityChart.update();
+    }
+}
 
 function updateConfig() {
     const linerizationInput = document.getElementById('linerizationInput').value;
