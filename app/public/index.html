@@ -18,7 +18,7 @@
             <h1>Welcome Jack</h1>
             <p>Calculate your Effort versus Velocity</p>
             <ion-item>
-                <ion-label >Enter Perceived Effort:</ion-label>
+                <ion-label>Enter Perceived Effort:</ion-label>
                 <ion-input id="effortInput" type="number" value="80"></ion-input>
             </ion-item>
             <ion-button expand="full" onclick="calculateVelocity()">Calculate Velocity</ion-button>
@@ -29,9 +29,13 @@
             <ion-item>
                 <ion-button expand="full" href="config.html">Update Config</ion-button>
             </ion-item>
+           
+                <canvas id="effortVelocityChart" width="1024" height="768"></canvas>
+            
         </ion-content>
     </ion-app>
     <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
