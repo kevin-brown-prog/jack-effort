@@ -51,8 +51,8 @@ function createChart() {
         config = JSON.parse(storedConfig);
 
     }
-    //  window.effortVelocityChart.data.labels = [];
-    //  window.effortVelocityChart.data.datasets[0].data = [];
+    window.effortVelocityChart.data.labels = [];
+    window.effortVelocityChart.data.datasets[0].data = [];
     const linerization = config.linerization || 2.5;
     const max_velo = config.max_velo || 85;
 
