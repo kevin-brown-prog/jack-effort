@@ -32,8 +32,10 @@ function calculateVelocity() {
         const linerization = config.linerization || 2.5;
         const max_velo = config.max_velo || 85;
         const effortNormalized = effort / 100 * linerization;
-        const sigmoid_output = 1 / (1 + Math.exp(-effortNormalized));
-        const max_sigmoid_output = sigmoid_output - 0.5;
+       
+        const max_sigmoid_output = 1 / (1 + Math.exp(-linerization)) - 0.5;
+        
+
 
         const velocity = (1 / (1 + Math.exp(-effortNormalized)) - 0.5) / max_sigmoid_output * max_velo;
         velocityOutput.textContent = velocity.toFixed(2);
