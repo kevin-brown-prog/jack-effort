@@ -80,5 +80,5 @@ function updateConfig() {
     // Save config to local storage
     localStorage.setItem('config', JSON.stringify(newConfig));
 
-
+    createChart();
 }
